@@ -3,7 +3,7 @@
 **Running the Generator**
 
 _Linux or MacOs_
-- `git clone https://github.com/PrashantBaid11/NewsGenerator.git 
+- `git clone https://github.com/PrashantBaid11/NewsGenerator.git`
 - `python3 main.py`
 
 _Windows_
