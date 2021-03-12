@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+from decouple import config
 import requests
 
 
@@ -30,6 +31,22 @@ def get_sports_news():
     get_news("#card_1206550_itg-news-section-4", 3)
 
 
+def get_weather():
+    api_key = config('APIKEY')
+    city_name = config('CITY')
+    base_url = "http://api.openweathermap.org/data/2.5/weather?"
+    complete_url = base_url + "appid=" + api_key + "&q=" + city_name
+    reponse = requests.get(complete_url)
+    json = reponse.json()
+    temperature_json = json['main']
+    min_temp = int(temperature_json['temp_min'] - 273.15)
+    max_temp = int(temperature_json['temp_max'] - 273.15)
+    humidity = int(temperature_json['humidity'])
+    print(f"- Minimum Temperature: {min_temp} celsius")
+    print(f"- Maximum Temperature: {max_temp} celsius")
+    print(f"- Humidity: {humidity}")
+
+
 print("##### INTERNATIONAL NEWS ######")
 get_international_news()
 
@@ -38,3 +55,6 @@ get_national_news()
 
 print("#####SPORTS NEWS ######")
 get_sports_news()
+
+print("##### WEATHER #####")
+get_weather()
