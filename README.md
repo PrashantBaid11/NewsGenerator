@@ -1,13 +1,34 @@
 # News Generator
 
-**Running the Generator**
 
-`git clone https://github.com/PrashantBaid11/NewsGenerator.git`
+## Table of Contents 
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Requirements](#requirements)
 
-_Linux or MacOs_
+## General info
+This project generates news from [IndiaToday](https://www.indiatoday.in/). I made this project to automate my school tasks. 
 
-- `python3 main.py`
 
-_Windows_
+## Technologies
+* BeautifulSoup4
+* python-decouple
+* Requests
 
-- `python main.py`
+## Setup
+
+##### Linux/Unix
+```
+$ cd NewsGenerator
+$ python3 main.py
+```
+
+##### Windows
+```
+$ cd NewsGenerator
+$ python main.py
+```
+
+## Requirements
+You will need a API key from [OpenWeatherMap](https://openweathermap.org/)
